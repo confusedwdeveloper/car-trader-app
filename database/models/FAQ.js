@@ -17,4 +17,10 @@ const FAQSchema = new Schema({
   },
 });
 
-export default mongoose.model("faq", FAQSchema);
+let FAQ;
+try {
+  FAQ = mongoose.model("faq", FAQSchema);
+} catch (error) {
+  FAQ = mongoose.model("faq");
+}
+export default FAQ;
