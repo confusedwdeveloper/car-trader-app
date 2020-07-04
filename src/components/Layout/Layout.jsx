@@ -9,7 +9,9 @@ const Layout = ({ title, children }) => {
       <Head>
         <title>{title}</title>
       </Head>
-      <Container maxWidth="lg">{children}</Container>
+      <Container component="main" maxWidth="lg">
+        {children}
+      </Container>
     </>
   );
 };

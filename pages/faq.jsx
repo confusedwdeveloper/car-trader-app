@@ -1,14 +1,13 @@
 import connectToDB from "../database/db";
 import Model from "../database/models/FAQ";
 import Layout from "../src/components/Layout/Layout";
+import ExpansionPanel from "../src/components/ExpansionPanel/ExpansionPanel";
 
 export default function ({ faq }) {
   return (
     <Layout title="FAQ">
       {faq.map((f) => (
-        <div key={f._id}>
-          {f.question} | {f.answer}
-        </div>
+        <ExpansionPanel key={f._id} faq={f} />
       ))}
     </Layout>
   );
